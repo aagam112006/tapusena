@@ -1,0 +1,123 @@
+Practical No-2 [configuration]
+git --version
+git config --global user.name "Your Name" // config username 
+git config --global user.email "your@email.com" // config email id 
+git config --global core.editor "code --wait" // setup vs studio for coding 
+git config --list // check whether set up is done properly 
+notepad ~/.gitconfig // open config details on notepad 
+
+practical no-3 [ssh keys]
+ssh-keygen -t ed25519 -C "your@email.com"  // create ssh key 
+eval "$(ssh-agent -s)" // starts ssh 
+ssh-add ~/.ssh/id_ed25519 // adds ssh key 
+ssh -T git@github.com // test GitHub connection 
+cat ~/.ssh/id_ed25519.pub // display ssh public key
+ssh -T git@github.com // test connection again 
+
+practical no-4 
+mkdir foldername 
+ls
+cd foldername
+cd .. // comes back 
+pwd // folder path
+git init // initialize empty git 
+echo "writeanystuff">README.md 
+ls
+git add README.md
+git commit -m "write any comment"
+NOW CREATE A REPO IN GIT 
+git clone REPOSITORY_URL
+ls 
+cd reponame 
+ls
+echo "writeanystuff">hello.txt
+ls
+git status 
+git add hello.txt
+git commit -m hello.txt
+git push -u origin main
+
+practical no-5
+cat filename // display content of that file
+touch .gitignore // creates gitignore
+
+echo "*.filepattern">.gitignore /// to ignore files 
+echo "foldername/">>.gitignore ///to ignore folders 
+
+git add .gitignore 
+git commit -m "writeanycomment"
+
+git log /// to check detailed commit history 
+git log --oneline /// to check in short commit history 
+
+git rm -f filename /// removes file 
+git commit -m ""
+
+git rm --cached filename /// removes file only from git but keeps in local directory 
+
+
+git mv originalfilename newfilename  /// rename file
+git commit -m ""
+
+practical no-6
+git log --graph  ///displays commit history with a graphical representation of branching.
+git log --graph --oneline --all  ///displays all Git commit histories in a short, graphical format, including commits from different branches.
+
+git add filename 
+git reset filename ///removes the file from the staging area.(not from repo)
+
+git log --oneline
+git revert COMMIT_ID ///undo the changes made by a previous commit without deleting that commit from Git history.
+git push -u origin main
+
+
+practical no-7
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git /// same like git clone
+git remote -v /// check remote connection
+git fetch origin ///downloads updates from the remote repository.
+git pull origin main ///fetches changes and integrates them into your current branch.
+git tag -a tagname -m "writeanycomment" /// creates a tag
+git tag tagname /// creates a tag without message 
+git tag ///shows all tag 
+git show tagname /// shows the particular tag details 
+git push origin tagname /// pushes the tag to the repository 
+git push https://github.com/modhnishita/prac5 tagname /// does the same as above 
+git push --tags ///pushes all tags 
+
+practical no-8
+git commit -m "fix: correct validation bug in signup form" ///in message shows that fix was made 
+git commit -m "feat: add search functionality to dashboard" -m "implemented search filters and optimised database queries" ///in message shows that feature was added 
+
+
+git add filename filename /// add two files at once 
+git commit -m "any message" -m "any message" ///commit with two messages 
+
+
+git add -p ///stage selected changes [do any changes to existing added files to test this command]
+
+git checkout -b branchname /// creates a new branch 
+git checkout main  /// switches to branch main
+
+git branch /// to check which branch exists 
+
+run this in main:
+git merge branchname ///merge the changes from the branch into the branch you are currently on.
+
+run this in new created branch: 
+git rebase main /// adds the commit of new branch to the main branch log history 
+
+
+practical-9
+git push repositoryurl
+git checkout branchname /// switches to that branch 
+git add . ///adds all files
+ 
+git push --force origin main///Forcefully updates the remote main branch on GitHub to match your local main branch, potentially overwriting commits that exist on GitHub but not in your local history.
+
+git push origin branchname /// pushes to a specific branch 
+
+
+
+
+
+
